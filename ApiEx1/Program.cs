@@ -8,8 +8,8 @@ for (int i = 0; i < 5; i++)
     var Kclient = new HttpClient();
     var kanye = "https://api.kanye.rest";
     var kResponse = Kclient.GetStringAsync(kanye).Result;
-    var kQuote = JObject.Parse(kResponse);   //.GetValue("quote").ToString();
-    Console.WriteLine($"(Mr. West) {kQuote["quote"]}");
+    var kQuote = JObject.Parse(kResponse).GetValue("quote").ToString();
+    Console.WriteLine($"(Mr. West) {kQuote}");
 
     var Rclient = new HttpClient();
     var ron = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
